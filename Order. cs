@@ -1,0 +1,28 @@
+using System;
+
+namespace DominonaPizzaKiosk
+{
+    public class Order
+    {
+        public int OrderNumber;
+        public CartItem[] Items;
+        public double Total;
+        public double Payment;
+        public double Change;
+        public string Status;
+
+        public Order(
+            int orderNumber,
+            CartItem[] items,
+            double total,
+            double payment)
+        {
+            OrderNumber = orderNumber;
+            Items = items;
+            Total = total;
+            Payment = payment;
+            Change = payment - total;
+            Status = "Pending";
+        }
+    }
+}
