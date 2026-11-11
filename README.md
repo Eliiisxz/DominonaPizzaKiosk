@@ -1,31 +1,46 @@
+DOMINONA PIZZA KIOSK
 
+Project Description
 
-# DOMINONA PIZZA KIOSK
+Dominona Pizza Kiosk is a C# Console-Based Self-Service Ordering System developed as a Final Project for Fundamentals of Programming.
 
-## Project Description
-Dominona Pizza Kiosk is a C# self-service pizza ordering system developed as a Final Project for Fundamentals of Programming.
+The system allows customers to browse different food categories, select products, add items to their cart, and complete their orders. Cashiers can also view customer orders and update their order status.
 
-The system allows customers to browse pizza options and place orders while cashiers manage customer orders.
+Programming Language
 
-## Programming Language
 - C#
 
-## Development Tool
-- C# IDE
-- Visual Studio (for Windows Forms version, if required)
+Development Tool
 
-## Main Features
-1. Welcome Screen
+- Microsoft Visual Studio
+- C# Console Application
+
+Main Features
+
+1. Main Menu
 2. Customer Menu
-3. Pizza Ordering
+3. Product Selection and Quantity
 4. Shopping Cart
 5. Checkout and Payment
 6. Receipt Generation
 7. Cashier Dashboard
-8. Order Records
+8. Order Status Management
+9. Order Records
 
-## Group Project
+Programming Concepts Used
+
+- Variables and Data Types
+- Conditional Statements
+- Loops
+- Arrays
+- Classes and Objects
+- Methods
+
+Group Project
+
 Developed by the Dominona Pizza Kiosk Team.
 
-## Note
+Note
+
 This project is for educational purposes only.
+
