@@ -10,24 +10,41 @@ namespace DominonaPizzaKiosk
             {
                 Console.Clear();
 
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("========================================");
-                Console.WriteLine("           DOMINONA PIZZA");
-                Console.WriteLine("          SELF-SERVICE KIOSK");
+                Console.WriteLine("          DOMINONA PIZZA KIOSK");
                 Console.WriteLine("========================================");
 
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine("\n       SELF-SERVICE ORDERING SYSTEM");
+
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("\n              WELCOME!");
 
-                Console.WriteLine("\n       [1] CUSTOMER");
-                Console.WriteLine("       [2] CASHIER");
-                Console.WriteLine("       [3] EXIT");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\n----------------------------------------");
 
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("           [1] CUSTOMER");
+
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine("           [2] CASHIER");
+
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("           [3] EXIT");
+
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                Console.WriteLine("----------------------------------------");
+
+                Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.Write("\nSelect your option: ");
 
                 int choice;
 
                 if (!int.TryParse(Console.ReadLine(), out choice))
                 {
-                    Console.WriteLine("Invalid input!");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("\nInvalid input!");
                     Console.ReadKey();
                     continue;
                 }
@@ -44,13 +61,20 @@ namespace DominonaPizzaKiosk
                         break;
 
                     case 3:
-                        Console.WriteLine(
-                            "Thank you for visiting Dominona Pizza!"
-                        );
+                        Console.Clear();
+
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("========================================");
+                        Console.WriteLine("       THANK YOU FOR VISITING!");
+                        Console.WriteLine("          DOMINONA PIZZA");
+                        Console.WriteLine("========================================");
+
+                        Console.ResetColor();
                         return;
 
                     default:
-                        Console.WriteLine("Invalid choice!");
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("\nInvalid choice!");
                         Console.ReadKey();
                         break;
                 }
