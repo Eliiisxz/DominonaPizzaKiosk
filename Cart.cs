@@ -14,10 +14,12 @@ namespace DominonaPizzaKiosk
                 Items[ItemCount] = new CartItem(product, quantity);
                 ItemCount++;
 
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Product added to cart!");
             }
             else
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Cart is full!");
             }
         }
@@ -36,19 +38,42 @@ namespace DominonaPizzaKiosk
 
         public void DisplayCart()
         {
-            Console.WriteLine("\n========== YOUR CART ==========");
+            Console.Clear();
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("========================================");
+            Console.WriteLine("          DOMINONA PIZZA KIOSK");
+            Console.WriteLine("========================================");
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("\n                YOUR CART");
+
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("----------------------------------------");
 
             for (int i = 0; i < ItemCount; i++)
             {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine(Items[i].Product.Name);
+
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine("Quantity: " + Items[i].Quantity);
                 Console.WriteLine(
-                    Items[i].Product.Name +
-                    " x" + Items[i].Quantity +
-                    " = PHP " + Items[i].GetSubtotal()
+                    "Subtotal: PHP " +
+                    Items[i].GetSubtotal().ToString("F2")
                 );
+                Console.WriteLine();
             }
 
-            Console.WriteLine("-------------------------------");
-            Console.WriteLine("TOTAL: PHP " + GetTotal());
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("----------------------------------------");
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine(
+                "TOTAL: PHP " + GetTotal().ToString("F2")
+            );
+
+            Console.ResetColor();
         }
 
         public CartItem[] GetItemsCopy()
