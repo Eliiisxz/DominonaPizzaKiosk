@@ -12,27 +12,53 @@ namespace DominonaPizzaKiosk
             {
                 Console.Clear();
 
-                Console.WriteLine("================================");
-                Console.WriteLine("       CASHIER DASHBOARD");
-                Console.WriteLine("================================");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("========================================");
+                Console.WriteLine("          DOMINONA PIZZA KIOSK");
+                Console.WriteLine("             CASHIER DASHBOARD");
+                Console.WriteLine("========================================");
 
                 if (service.OrderCount == 0)
                 {
-                    Console.WriteLine("No orders available.");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("\nNo orders available.");
                 }
 
                 for (int i = 0; i < service.OrderCount; i++)
                 {
                     Order order = service.GetOrder(i);
 
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.WriteLine("\nOrder #" + order.OrderNumber);
+
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Order Type: " + order.OrderType);
+
+                    Console.WriteLine("Products:");
+
+                    for (int j = 0; j < order.Items.Length; j++)
+                    {
+                        Console.WriteLine(
+                            "- " + order.Items[j].Product.Name +
+                            " x" + order.Items[j].Quantity
+                        );
+                    }
+
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine(
-                        "Order #" + order.OrderNumber +
-                        " | PHP " + order.Total.ToString("F2") +
-                        " | " + order.Status
+                        "Total: PHP " + order.Total.ToString("F2")
                     );
+
+                    Console.WriteLine("Status: " + order.Status);
+
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("----------------------------------------");
                 }
 
+                Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("\n[0] Back to Main Menu");
+
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.Write("\nEnter Order Number to update: ");
 
                 int number;
@@ -67,11 +93,23 @@ namespace DominonaPizzaKiosk
                     continue;
                 }
 
+                Console.Clear();
+
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("========================================");
+                Console.WriteLine("              UPDATE ORDER");
+                Console.WriteLine("========================================");
+
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine("Order Number: " + selected.OrderNumber);
+                Console.WriteLine("Order Type: " + selected.OrderType);
+
                 Console.WriteLine("\n[1] Preparing");
                 Console.WriteLine("[2] Ready");
                 Console.WriteLine("[3] Completed");
 
-                Console.Write("Select new status: ");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write("\nSelect new status: ");
 
                 int status;
 
@@ -102,7 +140,10 @@ namespace DominonaPizzaKiosk
                         continue;
                 }
 
-                Console.WriteLine("Order status updated!");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("\nOrder status updated successfully!");
+
+                Console.WriteLine("Press any key to continue...");
                 Console.ReadKey();
             }
         }
