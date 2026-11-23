@@ -1,6 +1,7 @@
 using System;
 
 
+
 namespace DominonaPizzaKiosk
 {
     public class OrderService
@@ -9,7 +10,10 @@ namespace DominonaPizzaKiosk
         public int OrderCount = 0;
         public int NextOrderNumber = 1001;
 
-        public Order CreateOrder(Cart cart, double payment)
+        public Order CreateOrder(
+            Cart cart,
+            double payment,
+            string orderType = "Dine In")
         {
             if (OrderCount >= Orders.Length)
             {
@@ -20,7 +24,8 @@ namespace DominonaPizzaKiosk
                 NextOrderNumber,
                 cart.GetItemsCopy(),
                 cart.GetTotal(),
-                payment
+                payment,
+                orderType
             );
 
             Orders[OrderCount] = order;
