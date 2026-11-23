@@ -10,12 +10,14 @@ namespace DominonaPizzaKiosk
         public double Payment;
         public double Change;
         public string Status;
+        public string OrderType;
 
         public Order(
             int orderNumber,
             CartItem[] items,
             double total,
-            double payment)
+            double payment,
+            string orderType)
         {
             OrderNumber = orderNumber;
             Items = items;
@@ -23,6 +25,7 @@ namespace DominonaPizzaKiosk
             Payment = payment;
             Change = payment - total;
             Status = "Pending";
+            OrderType = orderType;
         }
     }
 }
