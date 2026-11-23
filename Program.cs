@@ -60,17 +60,32 @@ namespace DominonaPizzaKiosk
                         Cashier.ShowOrders();
                         break;
 
-                    case 3:
-                        Console.Clear();
+                    
+case 3:
+    Console.Clear();
 
-                        Console.ForegroundColor = ConsoleColor.Yellow;
-                        Console.WriteLine("========================================");
-                        Console.WriteLine("       THANK YOU FOR VISITING!");
-                        Console.WriteLine("          DOMINONA PIZZA");
-                        Console.WriteLine("========================================");
+    Console.ForegroundColor = ConsoleColor.Yellow;
+    Console.WriteLine("========================================");
+    Console.WriteLine("          DOMINONA PIZZA");
+    Console.WriteLine("========================================");
 
-                        Console.ResetColor();
-                        return;
+    Console.ForegroundColor = ConsoleColor.Cyan;
+    Console.WriteLine("\n       THANK YOU FOR VISITING!");
+
+    Console.ForegroundColor = ConsoleColor.Green;
+    Console.WriteLine("\n       We hope to see you again!");
+    Console.WriteLine("       Thank you for choosing us!");
+
+    Console.ForegroundColor = ConsoleColor.Red;
+    Console.WriteLine("\n========================================");
+
+    Console.ResetColor();
+
+    Console.WriteLine("\nPress any key to exit...");
+    Console.ReadKey();
+
+    Console.Clear();
+    return;
 
                     default:
                         Console.ForegroundColor = ConsoleColor.Red;
